@@ -1,5 +1,12 @@
 # Welcome to your Expo app 👋
 
+
+
+
+<img src='./hom1.png' alt='demo'>
+<img src='./hom2.png' alt='demo'>
+
+
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
