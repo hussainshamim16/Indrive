@@ -1,34 +1,20 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import SplashScreen from './screens/SplashScreen';
+import HomeScreen from './screens/HomeScreen';
 
+const Stack = createStackNavigator();
 
-
-const index = () => {
+const App = () => {
   return (
-    <View>
-      <Text style={styles.text}>index</Text>
-    </View>
-  )
-}
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="SplashScreen">
+        <Stack.Screen name="SplashScreen" component={SplashScreen} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
-const styles = StyleSheet.create({
-
-  // .primary: { color :'#FFCC00'},
-  // .background: '#FFFFFF',
-  // .text: '#text',
-
-  primary: {
-    color: "#ff0000",
-  },
-  backgound: {
-    color: "#FFFFFF",
-  },
-  text: {
-    color: "#000000",
-  }
-
-})
-
-
-
-export default index
+export default App;
