@@ -3,7 +3,7 @@
 
 
 
-<img src='https://www.obytes.com/_ipx/w_3840,q_75/%2Fassets%2Fposts%2F2020-03-18-form-in-react-native%2C-the-right-way%2Fimages%2Fform-in-react-native.png?url=%2Fassets%2Fposts%2F2020-03-18-form-in-react-native%2C-the-right-way%2Fimages%2Fform-in-react-native.png&w=3840&q=75' alt='demo'>
+<img src='./hom1.png' alt='demo'>
 
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
