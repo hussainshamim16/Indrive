@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup lokalio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .popupContainer {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            backdrop-filter: blur(8px);
+            padding: 40px 80px 0px 0px;
+        }
+
+        .nord-popup {
+            width: 420px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: popupSlide 0.4s ease-out;
+        }
+
+        @keyframes popupSlide {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .popup-header {
+            text-align: center;
+            padding: 32px 40px 20px;
+        }
+
+        .nord-logo {
+            width: 300px;
+            height: 70px;
+            margin-bottom: 16px;
+        }
+
+        .popup-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a202c;
+            margin: 0 0 12px 0;
+        }
+
+        .popup-text {
+            font-size: 15px;
+            color: #718096;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .popup-buttons {
+            padding: 20px 40px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-trust {
+            background: #000000;
+            color: white;
+            border: none;
+            border-radius: 10rem;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-trust:hover {
+            background: #4e4e4e;
+            transform: translateY(-1px);
+        }
+
+        .btn-notrust {
+            background: transparent;
+            color: #000000;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 10rem;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-notrust:hover {
+            background: #f7fafc;
+            border-color: #cbd5e0;
+        }
+
+        .later-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #718096;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .later-link:hover {
+            color: #4a5568;
+            text-decoration: underline;
+        }
+
+        .popup-none {
+            display: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            .nord-popup {
+                width: 92%;
+                margin: 20px;
+            }
+
+            .popup-header,
+            .popup-buttons {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="popupContainer">
+
+        <div class="nord-popup">
+            <div class="popup-header">
+                <img src="https://dashboard.lokalio.de/assets/logo.svg" alt="Nord Logo" class="nord-logo">
+                <h2 class="popup-title">Vertraust du diesem Browser?</h2>
+                <p class="popup-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos amet dolorum itaque numquam, quaerat
+                    fuga dolor saepe. Quisquam, maxime officiis?
+                </p>
+            </div>
+
+            <div class="popup-buttons">
+                <button class="btn-trust">Vertrauen</button>
+                <button class="btn-notrust">Nicht vertrauen</button>
+
+                <a href="#" class="later-link">Später noch einmal nachfragen</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Simple example actions
+        document.querySelector('.btn-trust').onclick = () => {
+            document.querySelector('.popupContainer').classList += " popup-none";
+            document.body.style.background = "transparent";
+        };
+
+        document.querySelector('.btn-notrust').onclick = () => {
+            document.querySelector('.popupContainer').classList += " popup-none";
+            document.body.style.background = "transparent";
+        };
+
+        document.querySelector('.later-link').onclick = (e) => {
+            e.preventDefault();
+            document.querySelector('.popupContainer').classList += " popup-none";
+            document.body.style.background = "transparent";
+        };
+    </script>
+
+</body>
+
+</html>
